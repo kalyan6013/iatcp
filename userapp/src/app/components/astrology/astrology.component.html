@@ -1,0 +1,158 @@
+<body class="body">
+    <app-header></app-header><br><br>
+  
+    <div class="bodydiv">
+                
+        <div class="row">
+                <div class="col-md-3">
+                        <h1 class="allhead">VEDIC ASTROLOGY</h1>
+                </div>
+                <div class="col-md-9" style="margin-top:10px;">
+                        <hr>
+                </div>             
+        </div><br><br>
+  
+        <div class="row">
+            <div class="col-md-7 col-sm-12 col-xs-12" >
+                <h1 class="headorange">DEFINITION :</h1>
+                <p class="para"> Vedic astrology is a relatively new term to describe Hindu or Indian astrology, 
+                  also known as jyotish. Like Western astrology, Vedic astrology
+                  is based on the belief that the planets and other heavenly bodies influence a person's life.</p><br>
+                <h1 class="headorange">BRIEF DESCRIPTION :</h1>
+                <p class="para"> Yoga – a sister science of jyotish along with Ayurveda – and yoga-related 
+                  practices are used to lessen or strengthen the influence of specific planets in a yogi's life. Such practices include mantras, meditation on yantras, yogic breathing exercises and asanas. On a deeper level, Vedic astrology provides insights and perspective on the yogi's strengths and weaknesses,
+                   thereby providing a framework and guidance for yoga practice.</p>
+                <p class="para">Vedic astrology is one of the vedangas of the Vedas, the ancient Hindu scriptures. The vedangas are the six sciences that are studied in order to practice and understand Vedic teachings. In Vedic astrology,
+                   a person's destiny is determined by his/her karma, which is set forth in the cosmic design.</p>
+            </div>
+  
+              <div class="col-md-5 colyogaimg">
+                  <img src="/assets/images/vedic.jpg" class="yogaimg">
+              </div>
+        </div><br>
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="headorange">BENEFITS :</h1>
+               
+                <p class="para">Astrology lights the path known as life and it is entirely our choice as to whether
+                   we want to travel on this path or not. Astrology helps us to know how we can make
+                  the best possible use of these tools in our lives for our benefit when
+                   we see the bad phase in our lives.
+                   Astrology is the connecting chord among our past, present and future. </p><br>
+           
+                   <!-- <a [routerLink]="['/bookappointment']"><button type="button" class="subbut" >
+                    BOOK AN APPOINTMENT
+                  </button></a> -->
+            </div>
+        </div>  
+  
+     
+          
+  
+    </div><br><br>
+  
+  
+    <!-- Modal -->
+    <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog " role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalLabel">BOOK AN APPOINTMENT</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div> 
+             <div class="modal-body">
+                <form novalidate #f="ngForm" (ngSubmit)="onSubmit(); f.reset()" class="signupform" name="myForm">
+                                  
+                    <div class="form-group">
+                            <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+                             <i class="glyphicon glyphicon-glyphicon glyphicon-user"></i>
+                            </span>
+                                                                    
+                            <input type="text" class="form-control inputfield" id="fname" placeholder="Your Name" name="fname"[(ngModel)]="user.fname" #userfname="ngModel" minlength="3" maxlength="15" pattern="^[a-zA-Z][a-zA-Z\s]{2,15}$" required>
+                     </div>
+                    <div class="alert alert-danger" *ngIf="userfname.touched && !userfname.valid">
+                            <div *ngIf="userfname.errors.required"> Name is required.</div>
+                            <div *ngIf="userfname.errors.minlength"> Name should be minimum {{ userfname.errors.minlength.requiredLength }} and maximum 15 characters.</div>
+                            <div *ngIf="userfname.errors.pattern">Only alphabets are allowed.</div>
+                    </div>
+                                                    
+                                                    
+                    <div class="form-group">
+                            <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+                            <i class="glyphicon glyphicon-glyphicon glyphicon-earphone"></i>
+                            </span>
+                            <input type="text" class="form-control inputfield" id="phone" 
+                            placeholder="Your Phone" name="phone" [(ngModel)]="user.phone"
+                            #userphone="ngModel" minlength="10" maxlength="10" pattern="^[6789][0-9]{0,10}$" required >
+                    </div>
+                    <div *ngIf="userphone.errors?.maxlength || userphone.errors?.minlength && userphone.touched" class="alert alert-danger">Enter a 10 digit phone number</div>
+                    <div *ngIf="userphone.errors?.pattern" class="alert alert-danger">Please provide a valid phone number</div> 
+                    <div *ngIf="userphone.errors?.required && userphone.touched" class="alert alert-danger">Phone Number is required</div>
+                                                    
+                                                    
+                                                    
+                    <div class="form-group">
+                            <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+                            <i class="glyphicon glyphicon-glyphicon glyphicon-envelope"></i>
+                            </span>
+                            <input type="text" class="form-control inputfield" id="email" placeholder="Your Email" name="email"[(ngModel)]="user.email"
+                            #useremail="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
+                    </div>
+                    <div *ngIf="useremail.errors?.required && useremail.touched" class="alert alert-danger">Email is required</div>
+                    <div *ngIf="useremail.errors?.pattern" class="alert alert-danger">Please provide a valid email address</div> 
+  
+                                                
+                                              
+                                      
+                    <div class="form-group">
+                            <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:86px;">
+                            <i class="glyphicon glyphicon-glyphicon glyphicon-pencil"></i>
+                            </span>
+                            <textarea rows="5" class="form-control textareafield" id="comment" 
+                            placeholder="Comment" name="comment" [(ngModel)]="user.comment"
+                            #usercomment="ngModel" minlength="25" required ></textarea>
+                    </div>
+                    <div *ngIf="usercomment.errors?.required && usercomment.touched" class="alert alert-danger">Comment is required</div>
+                    <div *ngIf=" usercomment.errors?.minlength && usercomment.touched" class="alert alert-danger">Minimum 25 characters required</div><br>
+                   
+                    <div class="form-group ">
+                      <label>Start Date</label>
+                        <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                            </span>
+                            <input type="date" class="form-control inputfield" id="example-date-input" >
+                          
+                        </div>
+                        
+                      
+                        <div class="form-group ">
+                            <label>End Date</label>
+                            <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+                                <i class="glyphicon glyphicon-calendar"></i>
+                                </span>
+                                <input type="date" class="form-control inputfield" id="example-date-input"  >
+                             
+                            </div>
+  
+                    <button type="submit" class="subbut2" [disabled]="f.form.invalid">Submit</button>
+                      
+                  </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button"  data-dismiss="modal">Close</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+  
+   -->
+  
+  
+  
+    <app-footer></app-footer>
+  </body>
+  
+  

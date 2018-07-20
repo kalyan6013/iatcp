@@ -1,0 +1,150 @@
+<body class="body">
+  <app-header></app-header><br><br>
+
+  <div class="bodydiv">
+              
+      <div class="row">
+              <div class="col-md-5">
+                      <h1 class="allhead">REIKI & PRANIC HEALING</h1>
+              </div>
+              <div class="col-md-7" style="margin-top:10px;">
+                      <hr>
+              </div>             
+      </div><br><br>
+
+      <div class="row">
+          <div class="col-md-7 col-sm-12 col-xs-12" >
+              <h1 class="headorange">DEFINITION :</h1>
+              <p class="para"><b>Reiki</b> is a healing technique that involves the therapist channeling energy into the patient usually through touch to energize and activate the natural healing abilities of the patient's body and to restore physical, mental and emotional health.</p>
+              <p class="para"><b>Pranic Healing </b>is a healing technology that has evolved over the years and has been developed by Master Choa Kok Sui based on his rigorous study of various esoteric sciences. It is essentially a no-touch technology that utilizes “prana” to balance, harmonize and transform the body's energy processes.</p>
+              <h1 class="headorange">BRIEF DESCRIPTION :</h1>
+              <p class="para"><b>Reiki</b> is a great tool for stress reduction and relaxation. Many people use Reiki for wellness. Reiki is not a cure for a disease or illness, but it may assist the body in creating an environment to facilitate healing. Reiki is a great tool to use as a complement to traditional medicine and is practiced in many hospitals and medical care settings.</p>
+              <p class="para"><b>Pranic Healing</b> is a revolutionary and comprehensive system of natural healing techniques that uses prana to treat illness. It is a synthesis of ancient, esoteric healing methods that have been rediscovered, researched and tested over decades with proven success.</p>
+             
+          </div>
+
+            <div class="col-md-5 colyogaimg">
+                <img src="/assets/images/Reiki2.jpeg" class="yogaimg" style="height:320px;">
+            </div>
+      </div><br>
+      <div class="row">
+          <div class="col-md-12">
+              <h1 class="headorange">BENEFITS :</h1>
+             
+              <p class="para">The benefits of Reiki and Pranic healing includes, Acquire tranquility in your mind and balanced emotions,find relief from a variety of physical ailments.<br>It Works on anyone of any age,prevent future problems.</p><br>
+         
+              <!-- <a [routerLink]="['/bookappointment']"><button type="button" class="subbut" >
+                BOOK AN APPOINTMENT
+              </button></a> -->
+          </div>
+      </div>  
+
+   
+        
+
+  </div><br><br>
+
+
+  <!-- Modal -->
+  <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog " role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="exampleModalLabel">BOOK AN APPOINTMENT</h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div> 
+           <div class="modal-body">
+              <form novalidate #f="ngForm" (ngSubmit)="onSubmit(); f.reset()" class="signupform" name="myForm">
+                                
+                  <div class="form-group">
+                          <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+                           <i class="glyphicon glyphicon-glyphicon glyphicon-user"></i>
+                          </span>
+                                                                  
+                          <input type="text" class="form-control inputfield" id="fname" placeholder="Your Name" name="fname"[(ngModel)]="user.fname" #userfname="ngModel" minlength="3" maxlength="15" pattern="^[a-zA-Z][a-zA-Z\s]{2,15}$" required>
+                   </div>
+                  <div class="alert alert-danger" *ngIf="userfname.touched && !userfname.valid">
+                          <div *ngIf="userfname.errors.required"> Name is required.</div>
+                          <div *ngIf="userfname.errors.minlength"> Name should be minimum {{ userfname.errors.minlength.requiredLength }} and maximum 15 characters.</div>
+                          <div *ngIf="userfname.errors.pattern">Only alphabets are allowed.</div>
+                  </div>
+                                                  
+                                                  
+                  <div class="form-group">
+                          <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+                          <i class="glyphicon glyphicon-glyphicon glyphicon-earphone"></i>
+                          </span>
+                          <input type="text" class="form-control inputfield" id="phone" 
+                          placeholder="Your Phone" name="phone" [(ngModel)]="user.phone"
+                          #userphone="ngModel" minlength="10" maxlength="10" pattern="^[6789][0-9]{0,10}$" required >
+                  </div>
+                  <div *ngIf="userphone.errors?.maxlength || userphone.errors?.minlength && userphone.touched" class="alert alert-danger">Enter a 10 digit phone number</div>
+                  <div *ngIf="userphone.errors?.pattern" class="alert alert-danger">Please provide a valid phone number</div> 
+                  <div *ngIf="userphone.errors?.required && userphone.touched" class="alert alert-danger">Phone Number is required</div>
+                                                  
+                                                  
+                                                  
+                  <div class="form-group">
+                          <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+                          <i class="glyphicon glyphicon-glyphicon glyphicon-envelope"></i>
+                          </span>
+                          <input type="text" class="form-control inputfield" id="email" placeholder="Your Email" name="email"[(ngModel)]="user.email"
+                          #useremail="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
+                  </div>
+                  <div *ngIf="useremail.errors?.required && useremail.touched" class="alert alert-danger">Email is required</div>
+                  <div *ngIf="useremail.errors?.pattern" class="alert alert-danger">Please provide a valid email address</div> 
+
+                                              
+                                            
+                                    
+                  <div class="form-group">
+                          <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:86px;">
+                          <i class="glyphicon glyphicon-glyphicon glyphicon-pencil"></i>
+                          </span>
+                          <textarea rows="5" class="form-control textareafield" id="comment" 
+                          placeholder="Comment" name="comment" [(ngModel)]="user.comment"
+                          #usercomment="ngModel" minlength="25" required ></textarea>
+                  </div>
+                  <div *ngIf="usercomment.errors?.required && usercomment.touched" class="alert alert-danger">Comment is required</div>
+                  <div *ngIf=" usercomment.errors?.minlength && usercomment.touched" class="alert alert-danger">Minimum 25 characters required</div><br>
+                 
+                  <div class="form-group ">
+                    <label>Start Date</label>
+                      <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+                          <i class="glyphicon glyphicon-calendar"></i>
+                          </span>
+                          <input type="date" class="form-control inputfield" id="example-date-input" >
+                        
+                      </div>
+                      
+                    
+                      <div class="form-group ">
+                          <label>End Date</label>
+                          <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+                              <i class="glyphicon glyphicon-calendar"></i>
+                              </span>
+                              <input type="date" class="form-control inputfield" id="example-date-input"  >
+                           
+                          </div>
+
+                  <button type="submit" class="subbut2" [disabled]="f.form.invalid">Submit</button>
+                    
+                </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button"  data-dismiss="modal">Close</button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+ -->
+
+
+
+  <app-footer></app-footer>
+</body>
+

@@ -1,0 +1,167 @@
+<body class="body">
+  <app-header></app-header><br><br>
+
+  <div class="bodydiv">
+<!--               
+      <div class="row">
+              <div class="col-md-3">
+                      <h1 class="allhead">PRE-ORDER</h1>
+              </div>
+              <div class="col-md-9" style="margin-top:10px;">
+                      <hr>
+              </div>             
+      </div><br><br> -->
+
+      <div class="row">
+        <div class="col-md-1">
+        </div>
+
+        <div class="col-md-10 " >
+            <div class="row signupform">
+                <div class="col-md-5 form_left">
+                    <p style="color:white;font-family: 'Courgette', cursive;font-size:50px;margin-top:80px;margin-left:30px;margin-right:30px;">
+                        <sup><span> <i  class="fa fa-quote-left fa-3x qua_cap quotes" style="font-size:30px;" ></i></span></sup>
+                        Yoga is the journey of the self, through the self , to the self .
+                        <sup><span> <i  class="fa fa-quote-right fa-3x qua_cap quotes" style="font-size:30px;"></i></span></sup>
+                </p><br>
+                <p style="color:white;font-size:35px;margin-top:0px;margin-left:30px;margin-right:30px;"><b>-  Bhagavad Gita</b></p>
+
+                </div>
+                <div class="col-md-5 form_right ">
+                    <div class="heading">
+                      <h1>Register</h1>
+                    </div><br><br><br>
+                 <form novalidate #f="ngForm" (ngSubmit)="onRegister(); f.reset()" >
+                        
+                        <div class="group">
+                                <input type="text" 
+                                    class="inputline" 
+                                    id="fname"    
+                                    name="fname"
+                                    [(ngModel)]="user.fname"
+                                    #userfname="ngModel"
+                                    minlength="3" 
+                                    maxlength="25" 
+                                    pattern="^[a-zA-Z][a-zA-Z\s]{2,15}$"
+                                    required><span class="highlight"></span><span class="bar"></span>
+                                    <p id="navlabel">Full Name</p>
+                            </div>
+                 <div class="alert alert-danger" *ngIf="userfname.touched && !userfname.valid">
+                    <div *ngIf="userfname.errors.required">Name is required.</div>
+                    <div *ngIf="userfname.errors.minlength">First Name should be minimum {{ userfname.errors.minlength.requiredLength }} and maximum 15 characters.</div>
+                    <div *ngIf="userfname.errors.pattern">Only alphabets are allowed.</div>
+                </div><br>
+        
+                 
+        
+                 <div class="group">
+                     <input type="email" 
+                         class="inputline" 
+                         id="email"
+                         name="email"
+                         [(ngModel)]="user.email"
+                         #useremail="ngModel"
+                         pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                         required><span class="highlight"></span><span class="bar"></span>
+                         <p id="navlabel">Email</p>
+                 </div>
+        
+                 <div *ngIf="useremail.errors?.required && useremail.touched" class="alert alert-danger">Email is required</div>
+                 <div *ngIf="useremail.errors?.pattern" class="alert alert-danger">Please provide a valid email address</div><br> 
+        
+                 <div class="group">
+                     <input type="text"  
+                     class="inputline" 
+                         id="phone" 
+                         name="phone"
+                         [(ngModel)]="user.phone"
+                         #userphone="ngModel"
+                         minlength="10"
+                         maxlength="10"
+                         pattern="^[6789][0-9]{0,10}$"
+                        required><span class="highlight"></span><span class="bar"></span>
+                        <p id="navlabel">Phone</p>
+                 </div>
+                 <div *ngIf="userphone.errors?.maxlength || userphone.errors?.minlength && userphone.touched" class="alert alert-danger">Enter a 10 digit phone number</div>
+                 <div *ngIf="userphone.errors?.pattern" class="alert alert-danger">Please provide a valid phone number</div> 
+                 <div *ngIf="userphone.errors?.required && userphone.touched" class="alert alert-danger">Phone Number is required</div><br>
+        
+                  
+                 <div class="form-group">
+                        <p class="para" >Pearl Vedic Book :</p>
+                        <input type="radio" 
+                        [(ngModel)]="user.book"
+                        name="book" 
+                        value="read"
+                        [(ngModel)]="user.book" 
+                        checked ><span class="radio_text">Read Sample</span>
+
+                        <!-- <input type="radio" 
+                        [(ngModel)]="user.book"
+                        name="book" 
+                        value="buy"><span class="radio_text">Buy Now</span> -->
+                    </div><br><br>
+
+                    
+                   
+                   <hr> <br>     
+                 <button  type="submit" class="subbut" [disabled]="f.form.invalid" >Submit</button>
+                 <button  type="reset" class="cancelbut" >Reset</button><br><br>
+                 <p class="para" style="color:green;">{{message}}</p>
+                 
+        
+               </form>
+            </div>
+            </div>
+            </div>
+        
+          <div class="col-md-1">
+            </div>
+
+      </div><br><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <form id="navform"  name="sample" action="contact.php" method="POST" style="margin-left:500px;">
+      <div class="group">
+          <input type="text"><span class="highlight"></span><span class="bar"></span>
+          <label id="navlabel">Name</label>
+      </div>
+      <div class="group">
+        <input type="email"><span class="highlight"></span><span class="bar"></span>
+        <label id="navlabel">Email</label>
+      </div>
+       <div class="group">
+        <input type="text"  name="Enquiry" rows="2"><span class="highlight"></span><span class="bar"></span>
+        <label id="navlabel">Message</label>
+      </div>
+          <button type="submit" class="btn btn-primary" id="navbtn">Send</button>
+    </form> -->
+
+      <app-footer></app-footer>
+    </body>
+    

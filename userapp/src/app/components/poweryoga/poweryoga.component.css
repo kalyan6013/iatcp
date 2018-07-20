@@ -1,0 +1,62 @@
+.subbut{
+    height:40px;width:auto;background-color:green;color:white;border:none;float:left;font-size:16px;font-family: 'Quicksand', sans-serif; 
+}
+.subbut1{
+    height:40px;width:100px;margin-left:350px;color:white;border:none;font-size:16px;font-family: 'Quicksand', sans-serif;
+}
+.subbut2{
+    height:40px;
+    width:100px;
+    background-color:green;
+    
+    
+    /* float:right; */
+    color:white;
+    border:none;
+    font-size:16px;
+    font-family: 'Quicksand', sans-serif;
+}
+.modal-body{
+   margin-left:20px;
+}
+.modal-title{
+    color:green;
+    text-align: center;
+}
+.colyogaimg{
+    padding:0px 0px 0px 80px;
+}
+.inputfield{
+    width:400px;height:40px;margin-left:40px;margin-top:-40px;
+}
+.textareafield{
+    width:400px;margin-left:40px;margin-top:-85px;
+}
+
+
+
+
+
+@media(min-width:0px) and (max-width:400px){
+    .colyogaimg{
+        padding:20px 0px 30px 20px;
+    }
+    .yogaimg{
+        width:270px;
+    }
+    .modal-content{
+        width:90%;
+        margin-left:8px;
+    }
+    .inputfield{
+        width:200px;
+    }
+    .textareafield{
+        width:200px;
+    }
+    .subbut2{
+        margin-left:140px;
+        margin-top:20px;
+    }
+}
+

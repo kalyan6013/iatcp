@@ -1,0 +1,167 @@
+
+
+<body class="body">
+
+        <app-header></app-header><br><br><br><br>
+
+        <!-- <div class="bg">   
+                <img src="assets/images/bannertop.jpg" height="500" width="100%">
+        </div>
+        <div class="thought_about">
+                <p>" The study of asana is not about mastering posture.  It’s about using posture to understand and transform yourself. "</p>
+                <p class="thought_author">- B.K.S Iyengar</p>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br> -->
+
+        <div class="bodydiv">
+                <div class="row rowcontact">
+                        <div class="col-md-6 colcontaddress" >
+                                <div class="founder_card2">
+                                <div class="row">
+                                        <div class="col-md-5">
+                                                <h1 class="allhead">CONTACT US</h1>
+                                        </div>
+                                        <div class="col-md-7" style="margin-top:10px;">
+                                                <hr>
+                                        </div>                                                
+                                </div><br><br>
+
+                                <div class="coladdress">
+                                    <p class="para"><span class="glyphicon glyphicon-home" style="padding-right:10px;"></span> #2, Siddharuda Nilaya, 8th Main, 13th Cross,Judicial Layout, Allalasandra,GKVK Post, Yelahanka, Bangalore - 560 065.</p>
+                                    <p class="para"><span class="glyphicon glyphicon-phone-alt" style="padding-right:10px;"></span> +91 - 80 2856 0168</p>
+                                    <p class="para"><span class="glyphicon glyphicon-earphone" style="padding-right:10px;"></span> +91 - 94491 66245 </p>
+                                    <p class="para"><span class="glyphicon glyphicon-earphone" style="padding-right:10px;"></span> +91 - 90360 01214 </p>
+                                    <p class="para"><span class="glyphicon glyphicon-envelope" style="padding-right:10px;"></span> devarajyoga58@gmail.com</p>
+                                    <p class="para"><span class="glyphicon glyphicon-envelope" style="padding-right:10px;"></span> yogidevaraj@atmadarshanayoga.in</p>
+                                    <p class="para"><span class="glyphicon glyphicon-envelope" style="padding-right:10px;"></span> sudhindra.n@gmail.com</p>
+                                    
+                                    <p class="para"><span class="glyphicon glyphicon-envelope" style="padding-right:10px;"></span> www.atmadarshanayoga.in</p>
+                
+                                    <br><br><br><br>
+                                </div>
+                                </div>
+                        </div>
+
+                        
+                        <div class="col-md-6">
+                                <div class="founder_card2">
+                                <div class="row">
+                                        <div class="col-md-5">
+                                                <h1 class="allhead">ENQUIRY FORM</h1>
+                                        </div>
+                                        <div class="col-md-7" style="margin-top:10px;">
+                                                <hr>
+                                        </div>
+                                
+                                </div><br><br>
+                                        
+                                <div class="coladdress">
+                                        <form novalidate #f="ngForm" (ngSubmit)="onSubmit(); f.reset()" class="signupform" name="myForm">
+                                            
+                                        <div class="form-group">
+                                                <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+                                                 <i class="glyphicon glyphicon-glyphicon glyphicon-user"></i>
+                                                </span>
+                                                                                        
+                                                <input type="text" class="form-control inputfield" id="fname" placeholder="Your Name" name="fname"[(ngModel)]="user.fname" #userfname="ngModel" minlength="3" maxlength="15" pattern="^[a-zA-Z][a-zA-Z\s]{2,15}$" required >
+                                         </div>
+                                        <div class="alert alert-danger" *ngIf="userfname.touched && !userfname.valid">
+                                                <div *ngIf="userfname.errors.required"> Name is required.</div>
+                                                <div *ngIf="userfname.errors.minlength"> Name should be minimum {{ userfname.errors.minlength.requiredLength }} and maximum 15 characters.</div>
+                                                <div *ngIf="userfname.errors.pattern">Only alphabets are allowed.</div>
+                                        </div>
+                                                                        
+                                                                        
+                                        <div class="form-group">
+                                                <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+                                                <i class="glyphicon glyphicon-glyphicon glyphicon-earphone"></i>
+                                                </span>
+                                                <input type="text" class="form-control inputfield" id="phone" 
+                                                placeholder="Your Phone" name="phone" [(ngModel)]="user.phone"
+                                                #userphone="ngModel" minlength="10" maxlength="10" pattern="^[6789][0-9]{0,10}$" required >
+                                        </div>
+                                        <div *ngIf="userphone.errors?.maxlength || userphone.errors?.minlength && userphone.touched" class="alert alert-danger">Enter a 10 digit phone number</div>
+                                        <div *ngIf="userphone.errors?.pattern" class="alert alert-danger">Please provide a valid phone number</div> 
+                                        <div *ngIf="userphone.errors?.required && userphone.touched" class="alert alert-danger">Phone Number is required</div>
+                                                                        
+                                                                        
+                                                                        
+                                        <div class="form-group">
+                                                <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+                                                <i class="glyphicon glyphicon-glyphicon glyphicon-envelope"></i>
+                                                </span>
+                                                <input type="text" class="form-control inputfield" id="email" placeholder="Your Email" name="email"[(ngModel)]="user.email"
+                                                #useremail="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required >
+                                        </div>
+                                        <div *ngIf="useremail.errors?.required && useremail.touched" class="alert alert-danger">Email is required</div>
+                                        <div *ngIf="useremail.errors?.pattern" class="alert alert-danger">Please provide a valid email address</div> 
+
+                                                                        
+                                        <div class="form-group">
+                                                <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+                                                <i class="glyphicon glyphicon-glyphicon glyphicon-pencil"></i>
+                                                </span>
+                                                <input type="text" class="form-control inputfield" id="subject" placeholder="Subject" name="subject" [(ngModel)]="user.subject"
+                                                #usersubject="ngModel" required >
+                                        </div>
+                                        <div *ngIf="usersubject.errors?.required && usersubject.touched" class="alert alert-danger">Subject is required</div>
+                                                                                 
+                                                                        
+                                        <div class="form-group">
+                                                <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:86px;">
+                                                <i class="glyphicon glyphicon-glyphicon glyphicon-pencil"></i>
+                                                </span>
+                                                <textarea rows="5" class="form-control textareafield" id="comment" 
+                                                placeholder="Comment" name="comment" [(ngModel)]="user.comment"
+                                                #usercomment="ngModel" minlength="25" required ></textarea>
+                                        </div>
+                                        <div *ngIf="usercomment.errors?.required && usercomment.touched" class="alert alert-danger">Comment is required</div>
+                                        <div *ngIf=" usercomment.errors?.minlength && usercomment.touched" class="alert alert-danger">Minimum 25 characters required</div><br>
+                                            
+                        
+                                        <button type="submit" class="subbut" [disabled]="f.form.invalid">Submit</button>
+                                            
+                                            </form>
+                                        </div>
+                                        
+                                               <p class="para" style="color:green;">{{message}}</p>
+                                        
+                                        </div>
+                        </div>
+
+
+
+
+                </div><br><br><br>
+
+
+
+
+                <div class="row">
+                                <div class="col-md-3">
+                                        <h1 class="allhead">LOCATED AT</h1>
+                                </div>
+                                <div class="col-md-9" style="margin-top:10px;">
+                                        <hr>
+                                </div>
+                                
+                </div><br><br>
+
+
+
+                <div class="row">
+                                <div class="col-md-12" class="colmap">
+                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.2269570404214!2d77.58655995001354!3d13.08479779073645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae184162240c81%3A0x68d08147fe7b38fa!2sSwamy+Vivekananda+Yoga+Research+%40+Holistic+Health+Trust!5e0!3m2!1sen!2sin!4v1527061845846"  frameborder="0" style="border:0" class="mapimg"></iframe>
+                                </div>
+                </div><br><br><br><br><br><br> 
+
+
+
+
+
+
+
+
+
+        </div> 
+        <app-footer></app-footer>
+</body> 

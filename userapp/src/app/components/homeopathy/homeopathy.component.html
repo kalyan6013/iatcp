@@ -1,0 +1,153 @@
+<body class="body">
+  <app-header></app-header><br><br>
+
+  <div class="bodydiv">
+              
+      <div class="row">
+              <div class="col-md-3">
+                      <h1 class="allhead">HOMEOPATHY</h1>
+              </div>
+              <div class="col-md-9" style="margin-top:10px;">
+                      <hr>
+              </div>             
+      </div><br><br>
+
+      <div class="row">
+          <div class="col-md-7 col-sm-12 col-xs-12" >
+              <h1 class="headorange">DEFINITION :</h1>
+              <p class="para">Homeopathy, or homeopathic medicine, is a holistic system of treatment that originated in the late eighteenth century. The name homeopathy is derived from two Greek words that mean "like disease." <br>The system is based on the idea that substances that produce symptoms of sickness in healthy people will have a curative effect when given in very dilute quantities to sick people who exhibit those same symptoms. Homeopathic remedies are believed to stimulate the body's own healing processes. Homeopaths use the term "allopathy," or "different than disease," to describe the use of drugs used in conventional medicine to oppose or counteract the symptom being treated.</p><br>
+              <h1 class="headorange">BRIEF DESCRIPTION :</h1>
+              <p class="para"> Homeopathy was founded by German physician Samuel Hahnemann (1755–1843), who was much disturbed by the medical system of his time, believing that its cures were crude and some of its strong drugs and treatments did more harm than good to patients.</p>
+              <p class="para">principles of homeopathy:</p>
+              <p class="para">1. Law of Similars (like cures like)</p>
+              <p class="para">2. Law of the Infinitesimal Dose (The more diluted a remedy is, the more potent it is.)</p>
+              <p class="para">3. Illness is specific to the individual</p><br>
+
+          </div>
+
+            <div class="col-md-5 colyogaimg">
+                <img src="/assets/images/homeopathy.jpg" class="yogaimg" style="height:350px;width:390px;">
+            </div>
+      </div>
+      <div class="row">
+          <div class="col-md-12">
+              <h1 class="headorange">BENEFITS :</h1>
+             
+              <p class="para">Homeopathy is Safe, Effective and Fast Acting,it's a Scientific and Natural Medicine which helps Build Resistance for All Life's Stages.</p>
+             <p class="para"> Homeopathy is a holistic approach to healing one that involves the body, mind, emotions, and spirit of the person being treated.</p>
+              <br>
+         
+              <!-- <a [routerLink]="['/bookappointment']"><button type="button" class="subbut" >
+                  BOOK AN APPOINTMENT
+                </button></a> -->
+          </div>
+      </div>  
+
+   
+        
+
+  </div><br><br>
+
+
+  <!-- Modal -->
+  <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog " role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="exampleModalLabel">BOOK AN APPOINTMENT</h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div> 
+           <div class="modal-body">
+              <form novalidate #f="ngForm" (ngSubmit)="onSubmit(); f.reset()" class="signupform" name="myForm">
+                                
+                  <div class="form-group">
+                          <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+                           <i class="glyphicon glyphicon-glyphicon glyphicon-user"></i>
+                          </span>
+                                                                  
+                          <input type="text" class="form-control inputfield" id="fname" placeholder="Your Name" name="fname"[(ngModel)]="user.fname" #userfname="ngModel" minlength="3" maxlength="15" pattern="^[a-zA-Z][a-zA-Z\s]{2,15}$" required>
+                   </div>
+                  <div class="alert alert-danger" *ngIf="userfname.touched && !userfname.valid">
+                          <div *ngIf="userfname.errors.required"> Name is required.</div>
+                          <div *ngIf="userfname.errors.minlength"> Name should be minimum {{ userfname.errors.minlength.requiredLength }} and maximum 15 characters.</div>
+                          <div *ngIf="userfname.errors.pattern">Only alphabets are allowed.</div>
+                  </div>
+                                                  
+                                                  
+                  <div class="form-group">
+                          <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+                          <i class="glyphicon glyphicon-glyphicon glyphicon-earphone"></i>
+                          </span>
+                          <input type="text" class="form-control inputfield" id="phone" 
+                          placeholder="Your Phone" name="phone" [(ngModel)]="user.phone"
+                          #userphone="ngModel" minlength="10" maxlength="10" pattern="^[6789][0-9]{0,10}$" required >
+                  </div>
+                  <div *ngIf="userphone.errors?.maxlength || userphone.errors?.minlength && userphone.touched" class="alert alert-danger">Enter a 10 digit phone number</div>
+                  <div *ngIf="userphone.errors?.pattern" class="alert alert-danger">Please provide a valid phone number</div> 
+                  <div *ngIf="userphone.errors?.required && userphone.touched" class="alert alert-danger">Phone Number is required</div>
+                                                  
+                                                  
+                                                  
+                  <div class="form-group">
+                          <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+                          <i class="glyphicon glyphicon-glyphicon glyphicon-envelope"></i>
+                          </span>
+                          <input type="text" class="form-control inputfield" id="email" placeholder="Your Email" name="email"[(ngModel)]="user.email"
+                          #useremail="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
+                  </div>
+                  <div *ngIf="useremail.errors?.required && useremail.touched" class="alert alert-danger">Email is required</div>
+                  <div *ngIf="useremail.errors?.pattern" class="alert alert-danger">Please provide a valid email address</div> 
+
+                                              
+                                            
+                                    
+                  <div class="form-group">
+                          <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:86px;">
+                          <i class="glyphicon glyphicon-glyphicon glyphicon-pencil"></i>
+                          </span>
+                          <textarea rows="5" class="form-control textareafield" id="comment" 
+                          placeholder="Comment" name="comment" [(ngModel)]="user.comment"
+                          #usercomment="ngModel" minlength="25" required ></textarea>
+                  </div>
+                  <div *ngIf="usercomment.errors?.required && usercomment.touched" class="alert alert-danger">Comment is required</div>
+                  <div *ngIf=" usercomment.errors?.minlength && usercomment.touched" class="alert alert-danger">Minimum 25 characters required</div><br>
+                 
+                  <div class="form-group ">
+                    <label>Start Date</label>
+                      <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+                          <i class="glyphicon glyphicon-calendar"></i>
+                          </span>
+                          <input type="date" class="form-control inputfield" id="example-date-input" >
+                        
+                      </div>
+                      
+                    
+                      <div class="form-group ">
+                          <label>End Date</label>
+                          <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+                              <i class="glyphicon glyphicon-calendar"></i>
+                              </span>
+                              <input type="date" class="form-control inputfield" id="example-date-input"  >
+                           
+                          </div>
+
+                  <button type="submit" class="subbut2" [disabled]="f.form.invalid">Submit</button>
+                    
+                </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button"  data-dismiss="modal">Close</button>
+            
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+
+
+
+
+  <app-footer></app-footer>
+</body>

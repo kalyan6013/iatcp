@@ -1,0 +1,68 @@
+
+
+  .bg{
+    margin-top:-20px;
+  }
+  
+  .thought_about{
+    -webkit-animation: slideIn 8s forwards;  
+    -moz-animation: slideIn 8s forwards;  
+    animation: slideIn 8s forwards;
+    margin-left:80px;
+    height:215px;
+    width: 87%;
+    opacity:1;
+    color:white;
+    font-weight: bold;
+    font-size: 35px;
+    padding:40px;
+    background: linear-gradient(rgba(85, 77, 77, 0.5), rgba(71, 69, 69, 0.5));
+    margin-top:-350px;
+    position: relative;
+    margin-bottom:150px;
+  }
+  
+  .thought_author{
+    float:right;
+    font-family: 'Tangerine', cursive;
+    font-size: 46px;
+    padding-bottom: 25px;
+  }
+  
+  @-webkit-keyframes slideIn {
+    0% {
+    transform: translateX(-900px);
+    }
+    100% {
+    transform: translateX(0);
+    }
+    }
+    @-moz-keyframes slideIn {
+    0% {
+    transform: translateX(-900px);
+    }
+    100% {
+    transform: translateX(0);
+    }
+    }
+    @keyframes slideIn {
+    0% {
+    transform: translateX(-900px);
+    }
+    100% {
+    transform: translateX(0);
+    }
+    }
+  
+    .serv_para{
+      font-family:'Quicksand', sans-serif;
+      font-size:16px;
+    }
+
+
+    @media(min-width:0px) and (max-width:400px){
+      .colimg{
+        display:none;
+      }
+     
+    }

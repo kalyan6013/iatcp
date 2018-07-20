@@ -1,0 +1,134 @@
+
+.topnav{
+    background-color:transparent !important;
+    height:auto;
+    box-shadow:0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+}
+.logotxt{
+    font-family: 'Abril+Fatface', cursive;
+    color:green;
+    letter-spacing: 1px;
+    margin-top:2px; 
+    font-size: 35px;
+}
+.navbar-nav{
+    margin-left:300px !important;
+}
+.nav-item{
+    font-size:15px;
+    font-family: 'Jura', sans-serif;
+    font-weight: bold;
+    margin-left:25px;
+}
+.nav-link{
+    color:#ff9933 !important;
+}
+.nav-item a{
+    letter-spacing: 2px;
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover{
+   color:green !important;
+} 
+
+
+
+@-webkit-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-moz-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-o-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.ady {
+    -webkit-animation: blink 1s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation: blink 1s;
+    -moz-animation-iteration-count: infinite;
+    -o-animation: blink 1s;
+    -o-animation-iteration-count: infinite;
+}
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown>.dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+      pointer-events: none;
+  }
+
+  .dropdown-item{
+    font-size:15px;
+    font-family: 'Jura', sans-serif;
+    font-weight: bold;
+    /* margin-left:25px; */
+    color:green !important;
+
+  }
+  /* .dropdown-item :hover{
+    color:green !important;
+  } */
+    
+  .dropdown-menu a:hover{ 
+    color:#ff9933 !important;
+  }
+  
+  .downloadimg{        
+        height:50px;      
+           width:50px; 
+              }
+
+
+  @media(min-width:0px) and (max-width:400px){
+    .ady{
+        display:none;
+    }
+    .logoimg{
+        margin-right:110px;
+    }
+    .navbar-nav{
+        margin-left:-25px;
+    }
+    .dropdown-menu{
+        width:90%;
+    }
+    .dropdown-item{
+        font-size:13px;
+    }
+    .nav-item{
+        font-size:14px;
+    }
+
+
+
+
+
+
+  }

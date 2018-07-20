@@ -1,0 +1,119 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+h6,h5,h4,h3,h2,h1{
+    font-family: 'Jura', sans-serif;
+}
+p{
+    font-family: 'Quicksand', sans-serif;
+}
+::-webkit-input-placeholder {
+    font-family: 'Quicksand', sans-serif;
+}
+:-moz-placeholder {
+    font-family: 'Quicksand', sans-serif;
+}
+::-moz-placeholder {
+    font-family: 'Quicksand', sans-serif;
+}
+:-ms-input-placeholder {
+    font-family: 'Quicksand', sans-serif;
+}
+.body{
+    overflow-x: hidden;
+}
+
+body,html{
+    height:100%;
+}
+.bodydiv{
+    padding-left:30px;
+    padding-right:30px;
+  }
+
+.allhead{
+font-size:30px;
+color:green;
+font-weight:bold
+}
+.para{
+    font-size:16px;
+    text-align:justify;
+}
+.w3-center {
+display:inline-block;width:auto;
+}
+.omback{
+background:url('assets/images/back.jpg')no-repeat;
+position:relative;
+background-size:cover;
+height: 100%;
+}
+
+.w3-animate-zoom 
+{
+    animation:animatezoom 2s;
+    animation-timing-function: linear;
+    animation-duration: 0.5s;
+}
+.preloader{
+    margin-left:470px;
+    margin-right:200px;
+    margin-top:180px;
+    margin-bottom:100px;
+}
+.loadimg{
+    height:300px;
+    width:300px;
+}
+
+@keyframes animatezoom
+{from{transform:scale(0)} 
+to{transform:scale(1.9)}}
+
+
+.bannerimg{
+    height:500px;
+    width:100%;
+  }
+  .headorange{
+    color:orange;text-align:justify;
+  }
+
+
+@media(min-width:0px) and (max-width:400px){
+.thought_about{
+    display: none;
+}
+.preloader{
+    margin-left:100px;
+    margin-top:250px;
+    margin-bottom:0px;
+}
+.loadimg{
+    height:150px;
+    width:150px;
+}
+.omback{
+    background:url('assets/images/bgsmall.png')no-repeat;
+    position:relative;
+    background-size:cover;
+    height: 100%;
+}
+.allhead{
+    font-size:23px;
+    color:green;
+    font-weight:bold
+}
+.para{
+    font-size:15px;
+    text-align:justify;
+}
+.bannerimg{
+    height:250px;
+}
+.headorange{
+   font-size:18px;
+}
+
+}

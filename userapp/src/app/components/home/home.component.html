@@ -1,0 +1,225 @@
+
+<body class="body">
+        <app-header></app-header>
+
+        <div class="bg">   
+                        <img src="assets/images/bg2.jpg" class="bannerimg">
+        </div>
+
+        <div class="scrolldiv">
+              <a [routerLink]="['/register']" > <button type="button" class="subbut">
+                                Registration
+                </button></a>
+                <!-- <marquee style="margin-left:250px;margin-top:-45px;"><p class="marqueepara">Admissions Open For Diploma 
+                        in Acupuncture & Acupressure. Hurry Up!!!
+                </p>
+                </marquee> -->
+        </div><br><br><br><br>
+        <div class="bodydiv">
+                <div class="row">
+                        <div class="col-md-3">
+                                <h1 class="allhead">HISTORY OF YOGA</h1>
+                        </div>
+                        <div class="col-md-9" style="margin-top:10px;">
+                                <hr>
+                        </div>           
+                </div><br><br>
+
+                <p class="para">Yoga originated in ancient India thousands of years ago. The word “yoga” derives from the Sanskrit (ancient Indian language) word “yug,” meaning to yoke, or unite . Very systematic processes of yoga were written by great Sage Patanjali in 500BC. His path of Ashtanga yoga included yamas and niyamas, Asanas, Pranayama, Pratyahara, Dharana, Dhyan, Samadhi.</p>
+                 <p class="para">Though many people in modern times think of yoga as just a physical practice that can help you become healthier physically, the deeper purpose of yoga practice is deeply spiritual and intended to help unite your individual soul with the universal consciousness.</p><br><br><br>
+
+               
+
+                <div class="row">
+                        <div class="col-md-2">
+                                <h1 class="allhead">OVERVIEW</h1>
+                        </div>
+                        <div class="col-md-10" style="margin-top:10px;">
+                                <hr>
+                        </div>
+                                
+                </div><br><br>
+
+
+                <div class="row">
+                        <div class="col-md-4 content">
+                                <div class="boxcontent">
+                                        <a [routerLink]="['/about']"><img src="assets/images/abt.jpg" alt="Avatar" class="image"></a> 
+                                        <a [routerLink]="['/about']"> 
+                                                <div class="overlay">
+                                                <div class="text">ABOUT US</div>
+                                                </div>
+                                        </a>
+                                </div>
+                        </div>
+
+                        <div class="col-md-4 content">
+                                <div class="boxcontent">
+                                        <a [routerLink]="['/services']"><img src="assets/images/yoga1.jpeg" alt="Avatar" class="image"></a>
+                                        <a [routerLink]="['/services']">
+                                                <div class="overlay">
+                                                <div class="text">OUR SERVICES</div>
+                                                </div>
+                                        </a>
+                                        
+                                </div>
+                                        
+                        </div>
+
+                        <div class="col-md-4 content">
+                                <div class="boxcontent">
+                                        <a [routerLink]="['/services']"><img src="assets/images/asana.png" alt="Avatar" class="image"></a>
+                                        <a [routerLink]="['/services']">
+                                                <div class="overlay">
+                                                <div class="text">YOGA CLASSES</div>
+                                                </div>
+                                        </a>
+                                        
+                                </div>
+                        </div>
+                </div><br><br><br>
+
+
+                <div class="row">
+                        <div class="col-md-3">
+                                <h1 class="allhead">TESTIMONIALS</h1>
+                        </div>
+                        <div class="col-md-9" style="margin-top:10px;">
+                                <hr>
+                        </div>                            
+                </div><br><br><br>
+
+               <a [routerLink]="['/testimonial']" style="text-decoration:none;"> <div id="demo" class="carousel slide"  data-interval="2000" data-ride="carousel">
+
+                        <ul class="carousel-indicators">
+                                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                                <li data-target="#demo" data-slide-to="1"></li>
+                                <li data-target="#demo" data-slide-to="2"></li>
+                                <li data-target="#demo" data-slide-to="3"></li>
+                        </ul>
+
+                        <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                        <div class="testimonial">    
+                                                <p >"There is total improvement of Health."</p>
+                                                <p class="test_author">- Ravindranath (Family & Engineer)</p> 
+                                        </div>
+                                </div>
+                                <div class="carousel-item">
+                                        <div class="testimonial">    
+                                                <p>"Helped in sinusitus & improvement in family."</p>
+                                                <p class="test_author">- Dr. Prashanth (M.B.B.S)</p> 
+                                        </div>
+                                </div>
+                                <div class="carousel-item">
+                                                <div class="testimonial">    
+                                                        <p>"I Got rid of Blood Pressure of last 20 years."</p>
+                                                        <p class="test_author">- Ramesh Nagarkar (Retd. Bank Manager)</p> 
+                                                </div>
+                                  </div>
+                                  <div class="carousel-item">
+                                                <div class="testimonial">    
+                                                        <p>"I am always active after attending ADY."</p>
+                                                        <p class="test_author">- Chandrakala (Software Engineer)</p> 
+                                                </div>
+                                  </div>
+                                  
+                        </div>
+                        <a class="carousel-control-prev" [routerLink]="['/#demo']" data-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" [routerLink]="['/#demo']" data-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                        </a>
+                </div></a>
+
+        </div><br><br>
+
+
+
+
+
+
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog " role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h2 class="modal-title" id="exampleModalLabel">PLEASE FILL IN THE DETAILS</h2>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div> <br>
+                             <div class="modal-body">
+                                <form novalidate #f="ngForm" (ngSubmit)="onEnroll(); f.reset()" class="signupform" name="myForm">
+                                                  
+                                    <div class="form-group">
+                                            <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+                                             <i class="glyphicon glyphicon-glyphicon glyphicon-user"></i>
+                                            </span>
+                                                                                    
+                                            <input type="text" class="form-control inputfield" id="fname" placeholder="Your Name" name="fname"[(ngModel)]="user.fname" #userfname="ngModel" minlength="3" maxlength="15" pattern="^[a-zA-Z][a-zA-Z\s]{2,15}$" required>
+                                     </div>
+                                    <div class="alert alert-danger" *ngIf="userfname.touched && !userfname.valid">
+                                            <div *ngIf="userfname.errors.required"> Name is required.</div>
+                                            <div *ngIf="userfname.errors.minlength"> Name should be minimum {{ userfname.errors.minlength.requiredLength }} and maximum 15 characters.</div>
+                                            <div *ngIf="userfname.errors.pattern">Only alphabets are allowed.</div>
+                                    </div>
+                                                                    
+                                                                    
+                                    <div class="form-group">
+                                            <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+                                            <i class="glyphicon glyphicon-glyphicon glyphicon-earphone"></i>
+                                            </span>
+                                            <input type="text" class="form-control inputfield" id="phone" 
+                                            placeholder="Your Phone" name="phone" [(ngModel)]="user.phone"
+                                            #userphone="ngModel" minlength="10" maxlength="10" pattern="^[6789][0-9]{0,10}$" required >
+                                    </div>
+                                    <div *ngIf="userphone.errors?.maxlength || userphone.errors?.minlength && userphone.touched" class="alert alert-danger">Enter a 10 digit phone number</div>
+                                    <div *ngIf="userphone.errors?.pattern" class="alert alert-danger">Please provide a valid phone number</div> 
+                                    <div *ngIf="userphone.errors?.required && userphone.touched" class="alert alert-danger">Phone Number is required</div>
+                                                                    
+                                                                    
+                                                                    
+                                    <div class="form-group">
+                                            <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+                                            <i class="glyphicon glyphicon-glyphicon glyphicon-envelope"></i>
+                                            </span>
+                                            <input type="text" class="form-control inputfield" id="email" placeholder="Your Email" name="email"[(ngModel)]="user.email"
+                                            #useremail="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
+                                    </div>
+                                    <div *ngIf="useremail.errors?.required && useremail.touched" class="alert alert-danger">Email is required</div>
+                                    <div *ngIf="useremail.errors?.pattern" class="alert alert-danger">Please provide a valid email address</div> 
+                  
+                                                                
+                                                              
+                                                      
+                                    <div class="form-group">
+                                            <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:86px;">
+                                            <i class="glyphicon glyphicon-glyphicon glyphicon-pencil"></i>
+                                            </span>
+                                            <textarea rows="5" class="form-control textareafield" id="hobbies" 
+                                            placeholder="Your Hobbies" name="hobbies" [(ngModel)]="user.hobbies"
+                                            #usercomment="ngModel" minlength="25" required ></textarea>
+                                    </div><br>
+                        
+                                   <!-- <p class="para"><b>Note :</b> Please check your email after submission.</p>
+                                    -->
+                                    <button type="submit" class="subbut2" [disabled]="f.form.invalid">Submit</button>
+                                      
+                                  </form>
+                                  <br>
+                                  <h3>{{message}}</h3>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button"  data-dismiss="modal">Close</button>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+        <app-footer></app-footer>
+
+</body>

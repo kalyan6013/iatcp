@@ -1,0 +1,25 @@
+.subbut{
+    height:40px;width:auto;background-color:green;color:white;border:none;float:left;font-size:16px;font-family: 'Quicksand', sans-serif; 
+}
+.subbut1{
+    height:40px;width:100px;margin-left:350px;color:white;border:none;font-size:16px;font-family: 'Quicksand', sans-serif;
+}
+.subbut2{
+    height:40px;
+    width:100px;
+    background-color:green;
+    
+    
+    /* float:right; */
+    color:white;
+    border:none;
+    font-size:16px;
+    font-family: 'Quicksand', sans-serif;
+}
+.modal-body{
+   margin-left:20px;
+}
+.modal-title{
+    color:green;
+    text-align: center;
+}

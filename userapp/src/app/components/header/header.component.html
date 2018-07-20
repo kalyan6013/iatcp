@@ -1,0 +1,78 @@
+
+ <nav class="navbar navbar-expand-md bg-light navbar-light topnav">
+  <a href="#"><img class="logoimg" src="assets/images/logo.png" height="90" width="90"></a>
+  <a class="navbar-brand" [routerLink]="['/home']"><h2 class="logotxt"><b>IATCP</b></h2></a>
+  <!-- <a [routerLink]="['/ady']"><img class="ady" src="assets/images/ady.png" height="70" width="70"/></a> -->
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+           <!-- <li class="nav-item">
+              <a class="nav-link" [routerLink]=""><img class="ady" src="assets/images/ady.png" style="height:50px;width:50px;"></a>
+            </li>  -->
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/home']">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/about']" >ABOUT</a>
+          </li> 
+          <li class="nav-item dropdown">
+              <a  class="nav-link" [routerLink]="['/services']"  >
+                  SERVICES
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" [routerLink]="['/yogaclasses']" >YOGA CLASSES</a><hr>
+                  <a class="dropdown-item" [routerLink]="['/poweryoga']">POWER YOGA</a><hr>
+                  <a class="dropdown-item" [routerLink]="['/ayurveda']">AYURVEDA</a><hr>
+                  <a class="dropdown-item" [routerLink]="['/astrology']">ASTROLOGY</a><hr>
+                  <a class="dropdown-item" [routerLink]="['/acupressure']" >ACUPRESSURE & ACUPUNCTURE</a><hr>
+                  <a class="dropdown-item" [routerLink]="['/naturopathy']">NATUROPATHY</a><hr>
+                  <a class="dropdown-item" [routerLink]="['/homeopathy']">HOMEOPATHY</a><hr>
+                  <a class="dropdown-item" [routerLink]="['/pranichealing']">REIKI & PRANIC HEALING</a><hr>
+                  <a class="dropdown-item" [routerLink]="['/spaservice']" >SPA SERVICES</a><hr>
+                  <a class="dropdown-item" [routerLink]="['/ftr']" >FTR & NLP </a>
+                </div>
+          </li> 
+
+          
+
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/events']">EVENTS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/gallery']">GALLERY</a>
+          </li>
+          <li  class="nav-item dropdown">
+              <!-- <a class="nav-link" [routerLink]="founder">TEAM</a> -->
+              <!-- <div class="dropdown"> -->
+                  <a class="nav-link" [routerLink]="['/founder']" >
+                    TEAM
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" [routerLink]="['/founder']">FOUNDER</a><hr>
+                    <a class="dropdown-item" [routerLink]="['/coordinators']">CO-ORDINATORS</a>
+                  </div>
+                <!-- </div> -->
+
+        </li> 
+
+
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/contact']">CONTACT</a>
+          </li> 
+          <!-- <li class="nav-item" >   
+            <a  [routerLink]="['/ordernow']"  data-toggle="tooltip" data-placement="right" title="Download Now..!!"    >            
+              <img src="/assets/images/book.png"  class="downloadimg" >          
+              </a>                       
+             </li>
+          -->
+
+        </ul>
+  </div> 
+</nav>
+
+
+

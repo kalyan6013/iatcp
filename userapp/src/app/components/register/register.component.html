@@ -1,0 +1,348 @@
+<body class="body" ng-app="">
+  <app-header></app-header><br><br>
+  <div class="bodydiv">
+          <div class="row">
+                  <div class="col-md-2">
+                          <h1 class="allhead">Registration</h1>
+                  </div>
+                  <div class="col-md-10" style="margin-top:10px;">
+                          <hr>
+                  </div>             
+          </div><br><br>
+  <div class="row">
+          <div class="col-md-1">
+          </div>
+  <div class="col-md-6">
+          <form novalidate #f="ngForm" (ngSubmit)="onBooking_reg(); f.reset()"  class="signupform" name="myForm">
+                                  
+          <!-- Name -->
+  <div class="form-group">
+          <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+          <i class="glyphicon glyphicon-user"></i>
+          </span>
+
+          <input type="text" class="form-control" id="fname" placeholder="Your Name" name="fname" [(ngModel)]="user.fname" #userfname="ngModel" minlength="3" maxlength="35" pattern="^[a-zA-Z][a-zA-Z\s]{2,15}$" required style="width:400px;height:40px;margin-left:40px;margin-top:-40px;">
+  </div>
+
+  <div class="alert alert-danger" *ngIf="userfname.touched && !userfname.valid">
+  <div *ngIf="userfname.errors.required"> Name is required.</div>
+  <div *ngIf="userfname.errors.minlength"> Name should be minimum {{ userfname.errors.minlength.requiredLength }} and maximum 35 characters.</div>
+  <div *ngIf="userfname.errors.pattern">Only alphabets are allowed and . / _ $ # are not allowed use space instead</div>
+  </div>
+                                          
+          <!-- Gender -->
+  
+  <div class="form-group">
+          <label>Gender</label>                   
+          <input type="radio" [(ngModel)]="user.gender" name="gender" value="male" >
+          <span class="radio_text">Male</span>
+  
+          <input type="radio" [(ngModel)]="user.gender" name="gender" value="female">
+          <span class="radio_text">Female</span>
+  </div>
+  <p style="color:red; font-size: 12px;"><b>Note: </b>Gender is required</p>
+                                                
+          <!-- DOB -->
+                                                
+  <div class="form-group ">
+          <label>Date of Birth</label>
+          <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+          <i class="glyphicon glyphicon-calendar"></i>
+          </span>
+          
+          <input type="date" name="dob" class="form-control" id="example-date-input" [(ngModel)]="user.dob" #userdob="ngModel" required style="width:400px;height:40px;margin-left:40px;margin-top:-40px;">
+  </div>
+
+  <div *ngIf="userdob.errors?.required && userdob.touched" class="alert alert-danger">Date of Birth is required</div>
+                                                          
+          <!-- Place of Birth -->
+                                                          
+          <div class="form-group">
+                  <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+                  <i class="glyphicon glyphicon-home"></i>
+                  </span>
+                                                                          
+                  <input type="text" class="form-control" id="place" placeholder="Place of Birth" name="place"[(ngModel)]="user.place" #userplace="ngModel" minlength="3" maxlength="50" pattern="^[a-zA-Z][a-zA-Z\s]{2,15}$" required style="width:400px;height:40px;margin-left:40px;margin-top:-40px;">
+          </div>
+          
+          <div class="alert alert-danger" *ngIf="userplace.touched && !userplace.valid">
+          <div *ngIf="userplace.errors.required"> Place of birth is required.</div>
+          <div *ngIf="userplace.errors.minlength"> Name should be minimum {{ userplace.errors.minlength.requiredLength }} characters.</div>
+          <div *ngIf="userplace.errors.pattern">Only alphabets are allowed.</div>
+          </div>
+                                          
+                  <!-- Time of Birth -->
+                                          
+  <div class="form-group ">
+          <label>Time of Birth</label>
+                  <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+                  <i class="glyphicon glyphicon-time"></i>
+                  </span>
+                  
+                  <input type="time" name="time" class="form-control" id="time" [(ngModel)]="user.time" #usertime="ngModel" required style="width:400px;height:40px;margin-left:40px;margin-top:-40px;">
+  </div>
+  <div *ngIf="usertime.errors?.required && usertime.touched" class="alert alert-danger">Time of Birth is required</div>
+  
+                                                          
+          <!-- Main Door Facing -->	  
+          
+  <div class="form-group">
+          <span class="input-group-addon" style="color:white; background-color: orange; width:40px;height:40px;">
+          <i class="glyphicon glyphicon-object-align-bottom"></i>
+          </span>
+                 
+          <input type="text" class="form-control" id="main" placeholder="Main Door Facing" name="main"
+          [(ngModel)]="user.main" #usermain="ngModel" minlength="3" maxlength="15" pattern="^[a-zA-Z][a-zA-Z\s]{2,15}$" required style="width:400px;height:40px;margin-left:40px;margin-top:-40px;">
+  </div>
+  
+  <div class="alert alert-danger" *ngIf="usermain.touched && !usermain.valid">
+  <div *ngIf="usermain.errors.required"> Field is required.</div>
+  <div *ngIf="usermain.errors.minlength"> Name should be minimum {{ usermain.errors.minlength.requiredLength }} characters.</div>
+  <div *ngIf="usermain.errors.pattern">Only alphabets are allowed.</div>
+  </div>
+                                          
+          <!-- Contact No -->
+                                                    
+  <div class="form-group">
+          <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+          <i class="glyphicon glyphicon-glyphicon glyphicon-earphone"></i>
+          </span>
+          
+          <input type="text" class="form-control" id="phone" placeholder="Your Phone" name="phone" [(ngModel)]="user.phone" #userphone="ngModel" minlength="10" maxlength="10" pattern="^[6789][0-9]{0,10}$" required style="width:400px;height:40px;margin-left:40px;margin-top:-40px;">
+  </div>
+  
+  <div *ngIf="userphone.errors?.maxlength || userphone.errors?.minlength && userphone.touched" class="alert alert-danger">Enter a 10 digit phone number</div>
+  <div *ngIf="userphone.errors?.pattern" class="alert alert-danger">Please provide a valid phone number</div> 
+  <div *ngIf="userphone.errors?.required && userphone.touched" class="alert alert-danger">Phone Number is required</div>
+                                                          
+          <!-- Email ID -->                                
+                                                          
+  <div class="form-group">
+          <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+          <i class="glyphicon glyphicon-glyphicon glyphicon-envelope"></i>
+          </span>
+          
+          <input type="text" class="form-control" id="email" placeholder="Your Email" name="email"[(ngModel)]="user.email" #useremail="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required style="width:400px;height:40px;margin-left:40px;margin-top:-40px;">
+  </div>
+  
+  <div *ngIf="useremail.errors?.required && useremail.touched" class="alert alert-danger">Email is required</div>
+  <div *ngIf="useremail.errors?.pattern" class="alert alert-danger">Please provide a valid email address</div> 
+                                          
+          <!-- Address -->
+        
+        
+  <div class="form-group">
+          <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:86px;">
+          <i class="glyphicon glyphicon-glyphicon glyphicon-pencil"></i>
+          </span>
+          <textarea rows="5" class="form-control" id="address" placeholder="Address" name="address" [(ngModel)]="user.address" #useraddress="ngModel" minlength="5"  style="width:400px;margin-left:40px;margin-top:-85px;" required></textarea>
+  </div>
+  
+  <!-- <div *ngIf="useraddress.errors?.required && useraddress.touched" class="alert alert-danger">Address is required </div>
+  <div *ngIf="useraddress.errors.minlength"> Address should be minimum {{ useraddress.errors.minlength.requiredLength }} characters.</div> -->
+
+  <div class="alert alert-danger" *ngIf="useraddress.touched && !useraddress.valid">
+          <div *ngIf="useraddress.errors.minlength"> Address should be minimum {{ useraddress.errors.minlength.requiredLength }} characters.</div>
+          <div *ngIf="useraddress.errors.required">Field is required.</div>
+  </div>
+                                        
+          <!--City-->
+                                        
+  <div class="form-group">
+          <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+          <i class="glyphicon glyphicon-home"></i>
+          </span>
+                                                                          
+          <input type="text" class="form-control" id="city" placeholder="Enter City Name" name="city" [(ngModel)]="user.city" #usercity="ngModel" minlength="3" maxlength="50" pattern="^[a-zA-Z][a-zA-Z\s]{2,15}$" required style="width:400px;height:40px;margin-left:40px;margin-top:-40px;">
+  </div>
+  
+  <div class="alert alert-danger" *ngIf="usercity.touched && !usercity.valid">
+  <div *ngIf="usercity.errors.required"> City is required.</div>
+  <div *ngIf="usercity.errors.minlength"> Name should be minimum {{ usercity.errors.minlength.requiredLength }} characters.</div>
+  <div *ngIf="usercity.errors.pattern">Only alphabets are allowed.</div>
+  </div>
+                                          
+          <!--Pin Code -->
+  
+  <div class="form-group">
+          <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+          <i class="glyphicon glyphicon-glyphicon glyphicon-envelope"></i>
+          </span>
+          
+          <input type="text" class="form-control" id="pin" placeholder="Enter Pin Code" name="pin" [(ngModel)]="user.pin" #userpin="ngModel" minlength="6" maxlength="6" pattern="^[123456789][0-9]{0,6}$" required style="width:400px;height:40px;margin-left:40px;margin-top:-40px;">
+  </div>
+  
+  <div *ngIf="userpin.errors?.maxlength || userpin.errors?.minlength && userpin.touched" class="alert alert-danger">Enter a 6 digit phone number</div>
+  <div *ngIf="userpin.errors?.pattern" class="alert alert-danger">Please provide a valid Pin Code</div> 
+  <div *ngIf="userpin.errors?.required && userpin.touched" class="alert alert-danger">Pin Code is required</div>
+                                          
+
+  <!-- <div>
+  <label>Are you suffering from any Diease?</label>
+  <input type="radio" ng-model="myVar" value="yes">Yes
+  <input type="radio" ng-model="myVar" value="no">No
+  </div>
+  
+  <div ng-switch="myVar">
+          <div ng-switch-when="yes"> -->
+
+                <!--Disease-->
+
+  <p style="color:red;font-size: 12px;"><b>Note: </b>Are you suffering from any disease fill below details</p>
+  <div class="form-group">
+          <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+          <i class="glyphicon glyphicon-exclamation-sign"></i>
+          </span>
+          
+          <input type="text" class="form-control" id="disease" placeholder="Enter Disease Name" name="disease" [(ngModel)]="user.disease" #userdisease="ngModel" minlength="2" maxlength="50" style="width:400px;height:40px;margin-left:40px;margin-top:-40px;">
+  </div>
+  
+  <div class="alert alert-danger" *ngIf="userdisease.touched && !userdisease.valid">
+  <div *ngIf="userdisease.errors.minlength"> Disease name should be minimum {{ userdisease.errors.minlength.requiredLength }} characters.</div>
+  <!-- <div *ngIf="userdisease.errors.pattern">Only alphabets and numerics are allowed.</div> -->
+  </div>
+
+                <!-- Year -->
+
+  <div class="form-group">
+          <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+          <i class="glyphicon glyphicon-glyphicon glyphicon-calendar"></i>
+          </span>
+                  
+          <input type="text" class="form-control" id="year" placeholder="Enter year" name="year" [(ngModel)]="user.year" #useryear="ngModel" minlength="4" maxlength="4" pattern="^19?[0-9][0-9]$|^20?[0-1][0-9]$" style="width:400px;height:40px;margin-left:40px;margin-top:-40px;">
+  </div>
+          <!-- ^[12][90][0-9]{0,4}$ -->
+          
+          <div *ngIf="useryear.errors?.maxlength || useryear.errors?.minlength && useryear.touched" class="alert alert-danger">Enter a 4 digit Year</div>
+          <div *ngIf="useryear.errors?.pattern" class="alert alert-danger">Please provide a valid Year</div> 
+
+
+          <!-- Certificate -->
+
+  <!-- <div class="form-group">
+          <label>Health Certificate</label>
+          <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+          <i class="glyphicon glyphicon-glyphicon glyphicon-file"></i>
+          </span>
+          
+          <input type="file" class="form-control" id="certificates" placeholder="Select file" name="certificates" [(ngModel)]="user.certificates" #usercertificates="ngModel" (change)="uploadFile($event)" style="width:400px;height:40px;margin-left:40px;margin-top:-40px;">
+  </div>  -->
+
+  <!-- (change)="uploadFile($event)" -->
+  
+  <!-- </div>
+  </div> -->
+  
+
+          <!-- Program -->
+
+  <div class="form-group">
+          <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:86px;">
+          <i class="glyphicon glyphicon-glyphicon glyphicon-pencil"></i>
+          </span>
+          
+          <textarea rows="5" class="form-control" id="program" placeholder="How do you came to know about this program ?" name="program" [(ngModel)]="user.program" #userprogram="ngModel" required style="width:400px;margin-left:40px;margin-top:-85px;">
+          </textarea>
+  </div>
+  
+  <div *ngIf="userprogram.errors?.required && userprogram.touched" class="alert alert-danger">Field is required</div>
+                                                                          
+          <!-- Zone -->
+        
+  <div class="form-group">
+          <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+          <i class="glyphicon glyphicon-cog"></i>
+          </span>
+          
+          <ng-select [options]="myOptions" name="myOptions" [(ngModel)]="user.myOptions" #usermyOptions="ngModel" required style="width:400px;height:60px;margin-left:40px;margin-top:-35px;" placeholder="Which zone of bangalore you belong to ?">
+          </ng-select>
+  </div>
+
+  <p style="color: red;font-size: 12px;"><b>Note: </b>If not Bangalore select Not Applicable</p>
+
+  <div *ngIf="usermyOptions.errors?.required && usermyOptions.touched" class="alert alert-danger">Field is required</div>
+  
+
+          <!-- Yoga -->
+
+  <div class="form-group">
+          <label>Are you participating in yoga classes/sessions?</label>
+          <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+          <i class="glyphicon glyphicon-user"></i>
+          </span>
+          
+          <input type="text" class="form-control" id="yoga" placeholder="Enter type of Yoga class/session" name="yoga" [(ngModel)]="user.yoga" #useryoga="ngModel" minlength="2" maxlength="250" pattern="^[a-zA-Z][a-zA-Z\s]{2,15}$" style="width:400px;height:40px;margin-left:40px;margin-top:-40px;">
+  </div>
+
+
+
+  <div class="alert alert-danger" *ngIf="useryoga.touched && !useryoga.valid">
+  <div *ngIf="useryoga.errors.minlength"> Yoga name should be minimum {{ useryoga.errors.minlength.requiredLength }} characters.</div>
+  <div *ngIf="useryoga.errors.pattern">Only alphabets are allowed.</div>
+  </div>
+
+          <!-- Life -->
+  <div class="form-group">
+  <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:86px;">
+  <i class="glyphicon glyphicon-glyphicon glyphicon-pencil"></i>
+  </span>
+  <textarea rows="5" class="form-control" id="life" placeholder="Most Memorable incident in your life (+/-) ?" name="life" [(ngModel)]="user.life" #userlife="ngModel" required style="width:400px;margin-left:40px;margin-top:-85px;">
+  </textarea>
+  </div>
+  
+  <div *ngIf="userlife.errors?.required && userlife.touched" class="alert alert-danger">Field is required</div>
+
+          
+  <!-- <div>
+  <label>Are you Referred by anyone?</label>
+  <input type="radio" ng-model="myVari" value="yes">Yes
+  <input type="radio" ng-model="myVari" value="no">No
+  </div>
+                          
+  <div ng-switch="myVari">
+          <div ng-switch-when="yes"> -->
+                
+                <!--Referral Name-->
+
+                <p style="color:red;font-size: 12px;"><b>Note: </b>Are you referred by person fill below details</p>   
+        <div class="form-group">
+        <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+        <i class="glyphicon glyphicon-user"></i>
+        </span>
+        
+        <input type="text" class="form-control" id="rname" placeholder="Referral Name" name="rname"[(ngModel)]="user.rname" #userrname="ngModel" minlength="3" maxlength="35" pattern="^[a-zA-Z][a-zA-Z\s]{2,15}$" style="width:400px;height:40px;margin-left:40px;margin-top:-40px;">
+        </div>
+        <div class="alert alert-danger" *ngIf="userrname.touched && !userrname.valid">
+        <div *ngIf="userrname.errors.minlength"> Name should be minimum {{ userrname.errors.minlength.requiredLength }} and maximum 35 characters.</div>
+        <div *ngIf="userrname.errors.pattern">Only alphabets are allowed.</div>
+        </div>  
+                                                  
+ 
+                <!--Referral Phone-->
+
+  <div class="form-group">
+          <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+          <i class="glyphicon glyphicon-glyphicon glyphicon-earphone"></i>
+          </span>
+          <input type="text" class="form-control" id="rphone" placeholder="Enter referral Phone" name="rphone" [(ngModel)]="user.rphone" #userrphone="ngModel" minlength="10" maxlength="10" pattern="^[6789][0-9]{0,10}$" style="width:400px;height:40px;margin-left:40px; margin-top:-40px;">
+  </div>
+  
+  <div *ngIf="userrphone.errors?.maxlength || userrphone.errors?.minlength && userrphone.touched" class="alert alert-danger">Enter a 10 digit phone number</div>
+  <div *ngIf="userrphone.errors?.pattern" class="alert alert-danger">Please provide a valid phone number</div>
+  <!-- </div></div> -->
+  <br>
+  
+  <button type="submit" class="subbut2" [disabled]="f.form.invalid">Submit</button>
+                             
+  </form>
+  </div>
+  <div class="col-md-4">
+  </div>
+  <div class="col-md-1">
+  </div>
+        
+        
+  </div>
+  </div><br><br>
+  <app-footer></app-footer>
+  </body>

@@ -1,0 +1,115 @@
+
+.bg{
+    margin-top:-20px;
+  }
+  
+  .thought_about{
+    -webkit-animation: slideIn 8s forwards;  
+    -moz-animation: slideIn 8s forwards;  
+    animation: slideIn 8s forwards;
+    margin-left:80px;
+    height:215px;
+    width: 87%;
+    opacity:1;
+    color:white;
+    font-weight: bold;
+    font-size: 35px;
+    padding:40px;
+    background: linear-gradient(rgba(85, 77, 77, 0.5), rgba(71, 69, 69, 0.5));
+    margin-top:-350px;
+    position: relative;
+  }
+  
+  .thought_author{
+    float:right;
+    font-family: 'Tangerine', cursive;
+    font-size: 46px;
+    padding-bottom: 25px;
+  }
+  
+  @-webkit-keyframes slideIn {
+    0% {
+    transform: translateX(-900px);
+    }
+    100% {
+    transform: translateX(0);
+    }
+    }
+    @-moz-keyframes slideIn {
+    0% {
+    transform: translateX(-900px);
+    }
+    100% {
+    transform: translateX(0);
+    }
+    }
+    @keyframes slideIn {
+    0% {
+    transform: translateX(-900px);
+    }
+    100% {
+    transform: translateX(0);
+    }
+    } 
+    
+
+    .founder_card2{
+        height: auto;
+        background-color: white;
+        box-shadow: 0px 5px 15px 0px #888888;
+        padding-left: 30px;
+        padding-bottom:20px;
+        padding-top:20px;
+        padding-right:30px; 
+        width:100%;
+    } 
+    .subbut{
+        height:40px;width:100px;background-color:green;margin-left:350px;color:white;border:none;
+    }
+    .colmap{
+        padding-left:15px;width:1230px;height:500px;
+    }
+    .inputfield{
+        width:400px;height:40px;margin-left:40px;margin-top:-40px;
+    }
+    .textareafield{
+        width:400px;margin-left:40px;margin-top:-85px;
+    }
+
+    .mapimg{
+        width:1230px;height:500px;
+    }
+
+
+
+
+
+
+
+
+
+    @media(min-width:0px) and (max-width:400px){
+
+    
+    .colcontaddress{
+        margin-bottom:50px;
+    }
+    .inputfield{
+        width:180px;
+    }
+    .textareafield{
+        width:180px;
+    }
+    .subbut{
+        margin-left:120px;
+    }
+    .mapimg{
+        width:280px;
+    }
+
+
+
+
+
+
+    }

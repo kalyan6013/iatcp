@@ -1,0 +1,117 @@
+<body class="body">
+  <app-header></app-header><br><br>
+
+  <div class="bodydiv">
+              
+      <div class="row">
+              <div class="col-md-3">
+                      <h1 class="allhead">BOOK APPOINTMENT</h1>
+              </div>
+              <div class="col-md-9" style="margin-top:10px;">
+                      <hr>
+              </div>             
+      </div><br><br>
+
+     <div class="row">
+          <div class="col-md-1">
+          </div>
+          <div class="col-md-6">
+              <form novalidate #f="ngForm" (ngSubmit)="onBooking(); f.reset()"  class="signupform" name="myForm">
+                                  
+                   <div class="form-group">
+                          <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+                           <i class="glyphicon glyphicon-user"></i>
+                          </span>
+                                                                  
+                          <input type="text" class="form-control" id="fname" placeholder="Your Name" name="fname"[(ngModel)]="user.fname" #userfname="ngModel" minlength="3" maxlength="15" pattern="^[a-zA-Z][a-zA-Z\s]{2,15}$" required style="width:400px;height:40px;margin-left:40px;margin-top:-40px;">
+                   </div>
+                  <div class="alert alert-danger" *ngIf="userfname.touched && !userfname.valid">
+                          <div *ngIf="userfname.errors.required"> Name is required.</div>
+                          <div *ngIf="userfname.errors.minlength"> Name should be minimum {{ userfname.errors.minlength.requiredLength }} and maximum 15 characters.</div>
+                          <div *ngIf="userfname.errors.pattern">Only alphabets are allowed.</div>
+                  </div>
+                                                  
+                                            
+                  <div class="form-group">
+                          <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+                          <i class="glyphicon glyphicon-glyphicon glyphicon-earphone"></i>
+                          </span>
+                          <input type="text" class="form-control" id="phone" 
+                          placeholder="Your Phone" name="phone" [(ngModel)]="user.phone"
+                          #userphone="ngModel" minlength="10" maxlength="10" pattern="^[6789][0-9]{0,10}$" required style="width:400px;height:40px;margin-left:40px;margin-top:-40px;">
+                  </div>
+                  <div *ngIf="userphone.errors?.maxlength || userphone.errors?.minlength && userphone.touched" class="alert alert-danger">Enter a 10 digit phone number</div>
+                  <div *ngIf="userphone.errors?.pattern" class="alert alert-danger">Please provide a valid phone number</div> 
+                  <div *ngIf="userphone.errors?.required && userphone.touched" class="alert alert-danger">Phone Number is required</div>
+                                                  
+                                                  
+                                                  
+                  <div class="form-group">
+                          <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+                          <i class="glyphicon glyphicon-glyphicon glyphicon-envelope"></i>
+                          </span>
+                          <input type="text" class="form-control" id="email" placeholder="Your Email" name="email"[(ngModel)]="user.email"
+                          #useremail="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required style="width:400px;height:40px;margin-left:40px;margin-top:-40px;">
+                  </div>
+                  <div *ngIf="useremail.errors?.required && useremail.touched" class="alert alert-danger">Email is required</div>
+                  <div *ngIf="useremail.errors?.pattern" class="alert alert-danger">Please provide a valid email address</div> 
+
+
+                 <div class="form-group">
+                        <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:86px;">
+                        <i class="glyphicon glyphicon-glyphicon glyphicon-pencil"></i>
+                        </span>
+                        <textarea rows="5" class="form-control" id="comment" 
+                        placeholder="Comment" name="comment" [(ngModel)]="user.comment"
+                        #usercomment="ngModel" minlength="25" required style="width:400px;margin-left:40px;margin-top:-85px;"></textarea>
+                </div>
+                <div *ngIf="usercomment.errors?.required && usercomment.touched" class="alert alert-danger">Comment is required</div>
+                <div *ngIf=" usercomment.errors?.minlength && usercomment.touched" class="alert alert-danger">Minimum 25 characters required</div><br>
+
+                <div class="form-gropu">
+                        <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+                              <i class="glyphicon glyphicon-cog"></i>
+                             </span>
+                        <ng-select [options]="myOptions" name="myOptions" [(ngModel)]="user.myOptions" #usermyOptions="ngModel" style="width:400px;height:40px;margin-left:40px;margin-top:-50px;" placeholder="Please Select a Service" required>
+                        </ng-select>
+                </div>
+
+                <p style="color: red; font-size: 14px"><b>Note: </b>Please select your available dates for taking up the service.</p>
+               
+                  <div class="form-group ">
+                    <label>Available Start Date</label>
+                      <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+                          <i class="glyphicon glyphicon-calendar"></i>
+                          </span>
+                          <input type="date" class="form-control" id="example-date-input" name="startdate" [(ngModel)]="user.startdate" #userstartdate="ngModel" style="width:400px;height:40px;margin-left:40px;margin-top:-40px;">
+                        
+                      </div>
+                      
+                    
+                      <div class="form-group ">
+                          <label>Available End Date</label>
+                          <span class="input-group-addon" style="color:white; background-color: orange;width:40px;height:40px;">
+                              <i class="glyphicon glyphicon-calendar"></i>
+                              </span>
+                              <input type="date" name="enddate" class="form-control" id="example-date-input" [(ngModel)]="user.enddate" #userenddate="ngModel" style="width:400px;height:40px;margin-left:40px;margin-top:-40px;">
+                           
+                          </div>
+                        <br>
+                  <button type="submit" class="subbut2" [disabled]="f.form.invalid">Submit</button> 
+                     
+                </form> 
+          </div>
+          <div class="col-md-4">
+            </div>
+          <div class="col-md-1">
+          </div>
+
+
+     </div>
+
+   
+        
+
+  </div><br><br>
+  <app-footer></app-footer>
+</body>
